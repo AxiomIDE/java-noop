@@ -1,0 +1,7 @@
+name: axiom-official/java-noop
+version: 0.1.0
+language: java
+nodes:
+    - name: NoopAgent
+      input: NoopInput
+      output: NoopOutput
