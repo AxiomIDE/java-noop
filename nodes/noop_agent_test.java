@@ -92,9 +92,9 @@ public class NoopAgentTest {
         // Field mapping: the string echoes through unchanged (catches a node that
         // drops or swaps fields).
         assertEquals("hello", result.getExampleString());
-        // Reflection wiring: the mock's empty flow exposes 0 nodes, so the int is
-        // unchanged (catches reflection().flow().nodes() throwing or being wired to
-        // the wrong collection).
-        assertEquals(7, result.getExampleInt());
+        // Memory wiring: the mock's agent memory is empty, so after the (no-op)
+        // append the history reads back 0 turns (catches ax.agent().memory()
+        // .session().history() throwing or being wired to the wrong call).
+        assertEquals(0, result.getExampleInt());
     }
 }
